@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>High Quality PDF Viewer with Zoom & Scroll</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="icon-192.png" />
-  <meta name="theme-color" content="#111" />
   <style>
     html, body {
       margin: 0;
@@ -68,9 +65,7 @@
     <canvas id="pdf-render"></canvas>
   </div>
 
-  <!-- PDF.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-
   <script>
     const fileInput = document.getElementById("pdf-upload");
     const timeInput = document.getElementById("time-input");
@@ -84,7 +79,7 @@
     const wrapper = document.getElementById("canvas-wrapper");
 
     let pdfDoc = null, pageNum = 1, intervalId = null;
-    let currentScale = 2.5;
+    let currentScale = 2.5; // Default zoom level (2-4 best for high quality)
 
     toggleDark.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
@@ -178,13 +173,6 @@
         pageNum = 1;
       }
     });
-
-    // ✅ Register service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log("✅ Service Worker Registered"))
-        .catch(err => console.error("❌ Service Worker Error", err));
-    }
   </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "High Quality PDF Viewer",
+  "short_name": "PDF Viewer",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111",
+  "theme_color": "#111",
+  "description": "A high quality PDF viewer with zoom, scroll and autoplay.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
